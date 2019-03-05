@@ -29,6 +29,13 @@ $ 46732,1.1
 $ <prefix>,<price>
 
 ```
+
+## Setup Environment
+```
+$ install java8
+$ install Apache Maven 3.6.0  
+```
+
 ## How to make executable jar from this project?
 ```
 $ git clone https://github.com/rai-prashanna/Programming-Exercise-alaTest
