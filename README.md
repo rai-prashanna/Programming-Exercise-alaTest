@@ -12,6 +12,7 @@ $ drop all csv files into directory /alaTest/src/main/resources
 $ for example /alaTest/src/main/resources
                                       |- Operator A.csv
                                       |- Operator B.csv
+                                      |- <operator-name>.csv
 
 ```
 
@@ -29,7 +30,7 @@ $ 46732,1.1
 $ <prefix>,<price>
 
 ```
-## Installation
+### Prerequisites
 
 * [install java8](https://askubuntu.com/questions/464755/how-to-install-openjdk-8-on-14-04-lts) 
 * [install Apache Maven 3.6.0](https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/) 
@@ -49,3 +50,11 @@ $ goto directory containing executable jar file
 $ java -jar TelephoneCallRouter-jar-with-dependencies.jar <phoneNumber>
 ```
 ![alt text](https://github.com/rai-prashanna/Programming-Exercise-alaTest/blob/master/output.png)
+
+## Authors
+
+* **Prashanna Rai** 
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
