@@ -25,7 +25,7 @@ public class TestTelephoneCallRouter extends TestCase {
 	public void test_expect_cheap_price_from_operatorA_when_phonePrefix_is_46732_and_467() {
 		Long phonenumber = new Long("4673212345");
 		Map<String,String> expectedcheapOperator = new HashMap();
-		expectedcheapOperator.put("Operator","OperatorA");
+		expectedcheapOperator.put("Operator","OperatorB");
 		expectedcheapOperator.put("Price","1.0");
 	    when(mockedTelephoneCallRouter.getCheapOperator(phonenumber)).thenReturn(expectedcheapOperator);
 	    Map<String,String> actualcheapPrice=mockedTelephoneCallRouter.getCheapOperator(phonenumber);
