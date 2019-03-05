@@ -1,13 +1,17 @@
 package com.programming;
 
 import com.opencsv.CSVReader;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
 import org.apache.commons.io.IOUtils;
 
 /** 
@@ -17,6 +21,12 @@ import org.apache.commons.io.IOUtils;
  * @author Prashanna Rai 
  */ 
 public class MyCSVReader {
+	private static URL url;
+	  static 
+	  { 
+	    ClassLoader cldr = MyCSVReader.class.getClassLoader();
+	    url = MyCSVReader.class.getResource("/com/programming/src/main/resources/Operator A.csv");
+	  }
 
     public List<OperatorEntry> initalizeOperatorEntryfromCSVFiles() {
     	ClassLoader classLoader = getClass().getClassLoader();
@@ -24,7 +34,8 @@ public class MyCSVReader {
         CSVReader reader = null;
         List operatorlist= new ArrayList<OperatorEntry>();
         try {
-        	File folder = new File(classLoader.getResource(csvFile).getFile());
+        	File folder = new File("classes/target");
+        	System.out.println("the path is "+folder.getAbsolutePath());
             File[] listOfFiles = folder.listFiles();
             for (final File fileEntry : listOfFiles) { 
             OperatorEntry operatorEntry	= new OperatorEntry();
