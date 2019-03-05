@@ -35,7 +35,7 @@ public class MyCSVReader {
                     	reader = new CSVReader(new FileReader(fileEntry));
                         String[] line;
                         while ((line = reader.readNext()) != null) {
-                            System.out.println(" [prefix= " + line[0] + ", price= " + line[1]+ "]");
+                            System.out.println(" [operator= "+ opeartor_name+ ", prefix= " + line[0] + ", price= " + line[1]+ "]");
                             operatorEntry.setPricelist(Integer.parseInt(line[0]), Double.parseDouble(line[1]));
                         }
                         operatorlist.add(operatorEntry);

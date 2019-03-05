@@ -37,7 +37,7 @@ public class MyTelephoneCallRouter implements TelephoneCallRouter{
 			 pricelist = operatorentry.getPricelist();
 				while(divider<=1000000000){
 					if(pricelist.containsKey(prefix)){
-						System.out.println("the prefix is found "+operatorName+" is "+prefix);
+						System.out.println("the prefix is found at "+operatorName+" is "+prefix);
 						price = pricelist.get(prefix);
 						matchedOperatorEntryList.add(new OperatorEntry(operatorName,prefix,price));
 						break;
@@ -76,20 +76,25 @@ public Map<String,String> getCheapOperator(Long phonenumber){
 	        iterator.remove();
 	    } 
 	}
-		
 		return cheapOperator;
-
 		}
 		
 		
 public static void main(String[] args){
 	
-	TelephoneCallRouter myTelephoneCallRouter = new MyTelephoneCallRouter();
-	//Long phonenumber = new Long("4603312345");  4803312345
-	Long phonenumber = new Long("4673212345");
-	myTelephoneCallRouter.getCheapOperator(phonenumber);
-	System.out.println("the minimum price is "+ myTelephoneCallRouter.getCheapOperator(phonenumber));
-	
+	if(args.length==0){
+		System.out.println("Please enter phoneNumber ");
+	}
+	if(args.length==1){
+		TelephoneCallRouter myTelephoneCallRouter = new MyTelephoneCallRouter();
+		Long phonenumber = Long.parseLong(args[0]);
+		System.out.println("the minimum price is "+ myTelephoneCallRouter.getCheapOperator(phonenumber));
+				
+	}
+	else{
+		System.out.println("Please enter only one phoneNumber ");
+
+	}
 		}
 
 
