@@ -82,14 +82,16 @@ public Map<String,String> getCheapOperator(Long phonenumber){
 		
 public static void main(String[] args){
 	
-	if(args.length==0){
-		System.out.println("Please enter phoneNumber ");
-	}
 	if(args.length==1){
+		System.out.println("the phoneNumber is "+args[0]);
+
 		TelephoneCallRouter myTelephoneCallRouter = new MyTelephoneCallRouter();
 		Long phonenumber = Long.parseLong(args[0]);
 		System.out.println("the minimum price is "+ myTelephoneCallRouter.getCheapOperator(phonenumber));
 				
+	}
+	if(args.length==0){
+		System.out.println("Please enter phoneNumber ");
 	}
 	else{
 		System.out.println("Please enter only one phoneNumber ");
