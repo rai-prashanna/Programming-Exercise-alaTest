@@ -8,11 +8,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>alaTest</name>
   <description>alaTest</description>
+  <!-- Output to jar format -->
+  <packaging>jar</packaging>
   <properties>
         <!-- https://maven.apache.org/general.html#encoding-warning -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <jdk.version>1.8</jdk.version>
   </properties>
     <repositories>
         <repository>
@@ -89,16 +92,87 @@
 			<scope>test</scope>
 		</dependency>
   </dependencies>
-  
+
       <build>
-        <finalName>maven-unit-test</finalName>
+        <finalName>TelephoneCallRouter</finalName>
+            <resources>
+        <!-- resource processsing with a different output directory
+             for logback.xml -->
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>*.csv</include>
+            </includes>
+            <!-- relative to target/classes
+                 i.e. ${project.build.outputDirectory} -->
+            <targetPath>target</targetPath>
+        </resource>
+    </resources>
+    
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.0</version>
-            </plugin>
-        </plugins>
+			<!-- download source code in Eclipse, best practice -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+				</configuration>
+			</plugin>
+
+			<!-- Set a JDK compiler level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+
+			<!-- Make this jar executable -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+				  <!-- DO NOT include log4j.properties file in your Jar -->
+				  <excludes>
+					<exclude>**/log4j.properties</exclude>
+				  </excludes>
+				  <archive>
+					<manifest>
+						<!-- Jar file entry point -->
+						<mainClass>com.programming.MyTelephoneCallRouter</mainClass>
+					</manifest>
+				  </archive>
+				</configuration>
+			</plugin>
+	<plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+			<mainClass>com.programming.MyTelephoneCallRouter</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+      <executions>
+    <execution>
+      <id>make-assembly</id> <!-- this is used for inheritance merges -->
+      <phase>package</phase> <!-- bind to the packaging phase -->
+      <goals>
+        <goal>single</goal>
+      </goals>
+    </execution>
+  </executions>
+    </plugin>	
+			
+		</plugins>
     </build>
     
 </project>
