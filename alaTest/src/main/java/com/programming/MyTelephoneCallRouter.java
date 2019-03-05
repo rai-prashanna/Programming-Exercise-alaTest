@@ -9,9 +9,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-
+/** 
+ * Concrete implementation of TelephoneCallRouter 
+ * 
+ * @author Prashanna Rai 
+ */ 
 public class MyTelephoneCallRouter implements TelephoneCallRouter{
+	// Entity holding all prices for prefix from all operators 
     private List<OperatorEntry> operatorentrylist;
+    
+    //Entity holding all prices for phonenumber from all operators 
     private List<OperatorEntry> matchedOperatorEntryList;
     
 	public MyTelephoneCallRouter() {

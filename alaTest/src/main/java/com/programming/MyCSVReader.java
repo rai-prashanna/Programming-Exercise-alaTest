@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.io.IOUtils;
 
+/** 
+ * Contains infrastructure necessary for parsing csv files from resources folder 
+ * and create OperatorEntry entities.
+ * 
+ * @author Prashanna Rai 
+ */ 
 public class MyCSVReader {
 
     public List<OperatorEntry> initalizeOperatorEntryfromCSVFiles() {

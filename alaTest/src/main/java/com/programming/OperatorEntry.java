@@ -3,10 +3,15 @@ package com.programming;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.TreeMap;
+/** 
+ * Coarse classification for POJO with fields operatorName, prefix and price. 
+ * 
+ * @author Prashanna Rai 
+ */
 
 public class OperatorEntry {
 	private String operatorName;
-	private Map<Integer, Double> pricelist;
+	private Map<Integer, Double> pricelist;//is used for lookup of price for given prefix <Prefix,Price>
 	
 	public OperatorEntry(String operatorName, Integer prefix, Double price) {
 		this();
