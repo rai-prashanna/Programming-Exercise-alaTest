@@ -29,12 +29,10 @@ $ 46732,1.1
 $ <prefix>,<price>
 
 ```
+## Installation
 
-## Setup Environment
-```
-$ [install java8](https://askubuntu.com/questions/464755/how-to-install-openjdk-8-on-14-04-lts)
-$ install Apache Maven 3.6.0  
-```
+* [install java8](https://askubuntu.com/questions/464755/how-to-install-openjdk-8-on-14-04-lts) 
+* [install Apache Maven 3.6.0](https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/) 
 
 ## How to make executable jar from this project?
 ```
