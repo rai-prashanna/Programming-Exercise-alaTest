@@ -32,7 +32,7 @@ $ <prefix>,<price>
 
 ## Setup Environment
 ```
-$ install java8
+$ [install java8](https://askubuntu.com/questions/464755/how-to-install-openjdk-8-on-14-04-lts)
 $ install Apache Maven 3.6.0  
 ```
 
