@@ -29,9 +29,17 @@ $ 46732,1.1
 $ <prefix>,<price>
 
 ```
-## How to run this project?
+## How to make executable jar from this project?
 ```
 $ git clone https://github.com/rai-prashanna/Programming-Exercise-alaTest
 $ cd Programming-Exercise-alaTest/alaTest/
 $ mvn clean install 
+$ cd target
+$ your executable jar file is TelephoneCallRouter-jar-with-dependencies.jar
+```
+
+## How to run executable jar ?
+```
+$ goto directory containing executable jar file
+$ java -jar TelephoneCallRouter-jar-with-dependencies.jar <phoneNumber>
 ```
