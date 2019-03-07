@@ -51,7 +51,7 @@ $ java -jar TelephoneCallRouter-jar-with-dependencies.jar <phoneNumber>
 ```
 ![alt text](https://github.com/rai-prashanna/Programming-Exercise-alaTest/blob/master/output.png)
 
-## generate Coverage report ?
+## steps to generate Coverage report
 * [install EclEmma](https://www.eclemma.org/installation.html)
 
 ![alt text](https://github.com/rai-prashanna/Programming-Exercise-alaTest/blob/master/step-coverage-report.png)
