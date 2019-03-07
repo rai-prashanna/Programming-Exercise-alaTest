@@ -20,7 +20,7 @@ import org.apache.commons.io.IOUtils;
  * 
  * @author Prashanna Rai 
  */ 
-public class MyCSVReader {
+public class MyCSVReader implements ICSVReader{
 	private static URL url;
 	  static 
 	  { 
