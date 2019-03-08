@@ -26,6 +26,10 @@ public class MyTelephoneCallRouter implements TelephoneCallRouter{
 		matchedOperatorEntryList=new ArrayList<OperatorEntry>();
 	}
 
+	public MyTelephoneCallRouter(ICSVReader csvreader) {
+		operatorentrylist = csvreader.initalizeOperatorEntryfromCSVFiles();
+		matchedOperatorEntryList=new ArrayList<OperatorEntry>();
+	}
 	public List<OperatorEntry> lookupPriceAtOpeartors(Long phonenumber){
 		int divider = 100000;
 		int prefix=(int)(phonenumber/divider);
@@ -62,10 +66,14 @@ public Map<String,String> getCheapOperator(Long phonenumber){
 	        if(!Double.isNaN(currentPrice)){
 	        	if(Double.isNaN(cheapPrice)){
 	        		cheapPrice=currentPrice;
-	        	}
+        			cheapOperatorName=operatorEntry.getOperatorName();
+
+	        		cheapOperator.put("Operator", cheapOperatorName);
+        			cheapOperator.put("price", String.valueOf(cheapPrice));	        	}
 	        	else{
 	        		if(currentPrice<cheapPrice){
 	        			cheapPrice=currentPrice;
+	        			cheapOperator=new HashMap<String, String>();
 	        			cheapOperatorName=operatorEntry.getOperatorName();
 	        			cheapOperator.put("Operator", cheapOperatorName);
 	        			cheapOperator.put("price", String.valueOf(cheapPrice));
