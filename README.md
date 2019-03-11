@@ -61,7 +61,8 @@ $ java -jar TelephoneCallRouter-jar-with-dependencies.jar <phoneNumber>
 
 ## Authors
 
-* **Prashanna Rai** 
+* **[Prashanna Rai](https://www.linkedin.com/in/prashanna-rai/)** 
+
 
 ## License
 
